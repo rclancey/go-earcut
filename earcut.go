@@ -21,6 +21,16 @@ type node struct {
 	steiner bool
 }
 
+// Earcut returns an int array of vertex indices that make up the triangles
+// of the polygon.
+//
+// The polygon vertices should be passed as a flat array of float64 values.
+//
+// holeIndices is an array of integers pointing to the vertex index (not
+// the data index) of the start of each hole (if any).
+//
+// dim is the number of values per vertex.  Only the first two values (x & y)
+// will be considered when constructing the triangles.
 func Earcut(data []float64, holeIndices []int, dim int) ([]int, error) {
 	if dim < 2 {
 		return nil, errors.New("need at least 2 dimensions")
@@ -751,8 +761,8 @@ func signedArea(data []float64, start, end, dim int) float64 {
 	return sum
 }
 
-// return a percentage difference between the polygon area and its
-// triangulation area; used to verify correctness of triangulation
+// Deviation returns a percentage difference between the polygon area and
+// its triangulation area; used to verify correctness of triangulation
 func Deviation(data []float64, holeIndices []int, dim int, triangles []int) float64 {
 	hasHoles := holeIndices != nil && len(holeIndices) > 0
 	var outerLen int
