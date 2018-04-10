@@ -144,7 +144,7 @@ func earcutLinked(ear *node, triangles *[]int, dim int, minX, minY, invSize floa
 	}
 
 	// interlink polygon nodes in z-order
-	if pass != 0 && invSize != 0.0 {
+	if pass == 0 && invSize != 0.0 {
 		indexCurve(ear, minX, minY, invSize)
 	}
 
@@ -411,7 +411,7 @@ func findHoleBridge(hole, outerNode *node) *node {
 	// connection point
 	for {
 		if hy <= p.y && hy >= p.next.y && p.next.y != p.y {
-			x := p.x + (hy-p.y)*(p.next.x-p.x)/(p.next.y-p.x)
+			x := p.x + (hy-p.y)*(p.next.x-p.x)/(p.next.y-p.y)
 			if x <= hx && x > qx {
 				qx = x
 				if x == hx {
@@ -456,17 +456,19 @@ func findHoleBridge(hole, outerNode *node) *node {
 
 	p = m.next
 
-	var xx float64
+	var xx1, xx2 float64
 	for p != stop {
 		if hy < my {
-			xx = hx
+			xx1 = hx
+			xx2 = qx
 		} else {
-			xx = qx
+			xx1 = qx
+			xx2 = hx
 		}
 		if hx >= p.x &&
 			p.x >= mx &&
 			hx != p.x &&
-			pointInTriangle(xx, hy, mx, my, xx, hy, p.x, p.y) {
+			pointInTriangle(xx1, hy, mx, my, xx2, hy, p.x, p.y) {
 			tan = math.Abs(hy-p.y) / (hx - p.x) // tangential
 
 			if (tan < tanMin || (tan == tanMin && p.x > m.x)) &&
