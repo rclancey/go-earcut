@@ -200,7 +200,7 @@ func flatten(data [][][2]float64) ([]float64, []int) {
 }
 
 func loadVertices(name string) ([]float64, []int, error) {
-	rawdata, err := ioutil.ReadFile(filepath.Join("fixtures", name + ".json"))
+	rawdata, err := ioutil.ReadFile(filepath.Join("fixtures", name+".json"))
 	if err != nil {
 		return nil, nil, fmt.Errorf("Error reading fixture data: %s", err)
 	}
@@ -226,8 +226,8 @@ func testFixture(name string, expTriangles int, expDeviation float64, t *testing
 	if d > expDeviation {
 		t.Errorf("Deviation %f greater than expected (%f) for %s", d, expDeviation, name)
 	}
-	if len(tri) / 3 != expTriangles {
-		t.Errorf("Expected %d triangles, got %d for fixture %s", expTriangles, len(tri) / 3, name)
+	if len(tri)/3 != expTriangles {
+		t.Errorf("Expected %d triangles, got %d for fixture %s", expTriangles, len(tri)/3, name)
 	}
 }
 

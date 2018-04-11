@@ -755,7 +755,7 @@ func newNode(i int, x, y float64) *node {
 }
 
 func signedArea(data []float64, start, end, dim int) float64 {
-	var sum float64 = 0.0
+	var sum float64
 	for i, j := start, end-dim; i < end; i += dim {
 		sum += (data[j] - data[i]) * (data[i+1] + data[j+1])
 		j = i
@@ -788,7 +788,7 @@ func Deviation(data []float64, holeIndices []int, dim int, triangles []int) floa
 		}
 	}
 
-	var trianglesArea float64 = 0.0
+	var trianglesArea float64
 	for i := 0; i < len(triangles); i += 3 {
 		a := triangles[i] * dim
 		b := triangles[i+1] * dim
