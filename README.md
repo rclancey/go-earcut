@@ -3,13 +3,13 @@ earcut
 
 A library for efficiently transforming polygons into triangles in go.
 
-[![Build Status](https://travis-ci.org/rclancey/earcut.svg?branch=master)](https://travis-ci.org/rclancey/earcut)
-[![Go Report Card](https://goreportcard.com/badge/github.com/rclancey/earcut)](https://goreportcard.com/report/github.com/rclancey/earcut) 
-[![Documentation](https://godoc.org/github.com/rclancey/earcut?status.svg)](http://godoc.org/github.com/rclancey/earcut)
-[![Coverage Status](https://coveralls.io/repos/github/rclancey/earcut/badge.svg?branch=master)](https://coveralls.io/github/rclancey/earcut?branch=master)
-[![GitHub issues](https://img.shields.io/github/issues/rclancey/earcut.svg)](https://github.com/rclancey/earcut/issues)
-[![license](https://img.shields.io/github/license/rclancey/earcut.svg?maxAge=2592000)](https://github.com/rclancey/earcut/LICENSE)
-[![Release](https://img.shields.io/github/release/rclancey/earcut.svg?label=Release)](https://github.com/rclancey/earcut/releases)
+[![Build Status](https://travis-ci.org/rclancey/go-earcut.svg?branch=master)](https://travis-ci.org/rclancey/go-earcut)
+[![Go Report Card](https://goreportcard.com/badge/github.com/rclancey/go-earcut)](https://goreportcard.com/report/github.com/rclancey/go-earcut) 
+[![Documentation](https://godoc.org/github.com/rclancey/go-earcut?status.svg)](http://godoc.org/github.com/rclancey/go-earcut)
+[![Coverage Status](https://coveralls.io/repos/github/rclancey/go-earcut/badge.svg?branch=master)](https://coveralls.io/github/rclancey/go-earcut?branch=master)
+[![GitHub issues](https://img.shields.io/github/issues/rclancey/go-earcut.svg)](https://github.com/rclancey/go-earcut/issues)
+[![license](https://img.shields.io/github/license/rclancey/go-earcut.svg?maxAge=2592000)](https://github.com/rclancey/go-earcut/LICENSE)
+[![Release](https://img.shields.io/github/release/rclancey/go-earcut.svg?label=Release)](https://github.com/rclancey/go-earcut/releases)
 
 About
 -----
@@ -41,7 +41,7 @@ Usage
 Documentation
 -------------
 
-See [Mapbox](https://github.com/mapbox/earcut) and [GoDoc.org](https://godoc.org/github.com/rclancey/earcut) for complete documentation.
+See [Mapbox](https://github.com/mapbox/earcut) and [GoDoc.org](https://godoc.org/github.com/rclancey/go-earcut) for complete documentation.
 
 Author
 ------
